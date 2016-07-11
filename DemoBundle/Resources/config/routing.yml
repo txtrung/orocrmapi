@@ -1,0 +1,25 @@
+mcm_demo_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: MCMDemoBundle:Default:index }
+mcm_demo_user_all:
+    path:  /users
+    defaults: { _controller: MCMDemoBundle:Default:all, _format: ~ }
+    requirements:
+        _method: GET
+mcm_demo_user_get:
+    path:  /users/{id}
+    defaults: { _controller: MCMDemoBundle:Default:get, _format: json }
+    requirements:
+        _method: GET
+        id: "\d+"
+mcm_demo_user_new:
+    path:  /users
+    defaults: { _controller: MCMDemoBundle:Default:new, _format: ~ }
+    requirements:
+        _method: POST
+mcm_demo_user_update:
+    path:  /users/{update}
+    defaults:  { _controller: MCMDemoBundle:Default:update, _format: ~}
+    requirements:
+        _method: POST
+        update: "^(update)$"
